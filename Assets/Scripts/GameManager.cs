@@ -5,9 +5,10 @@ using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Text;
-
+//This script controls the whole game, many other methods call on it and it 
 public class GameManager : MonoBehaviour
 {
+    //Set Variables
     public List<GameObject> lockP;
     public List<GameObject> rooms;
     public List<Material> skyboxes;
@@ -52,9 +53,8 @@ public class GameManager : MonoBehaviour
     public GameObject RoomLab;
     public GameObject RoomCargoBay;
     public GameObject RoomCommunicationsArray;
-    //public bool roomSelected;
     public int roomNum;
-    // Start is called before the first frame update
+    // Start sets currency, score, ore and chips per click back to their base levels and turns off the permanenet lock points
     void Start()
     {
         isGameActive = true;
@@ -75,24 +75,25 @@ public class GameManager : MonoBehaviour
         
     }
 
+    //This method is called at the start of the game and sets the difficulty
     public void StartGame(string tag){
-        switch(tag){
-            case "easy":
-                isGameActive = true;
-                orePC = 5;
-                OreButton.pointValue =5;
-                ChipButton.pointValue =5;
-                chipPC = 5;
-                RenderSettings.skybox=skyboxes[0];
-                oreScore = 0;
-                chipScore = 0;
-                UpdateScore(0, "ore");
+        switch(tag){ //the tag passed comes from one of the 3 difficulty buttons on the start menu
+            case "easy": //for each case
+                isGameActive = true; //sets the game to active
+                orePC = 5; //sets ore per click
+                OreButton.pointValue =5; //sets how much the ore button is worth
+                ChipButton.pointValue =5; //sets how much the chip button is worth
+                chipPC = 5; //sets chips per click
+                RenderSettings.skybox=skyboxes[0]; //each difficulty has a different skybox to show what section of the galaxy its in
+                oreScore = 0; //sets the ore score
+                chipScore = 0; //sets the chip score
+                UpdateScore(0, "ore"); //updates both score boards
                 UpdateScore(0, "chip");
-                orePCText.text = "Ore Per Click: " + orePC;
+                orePCText.text = "Ore Per Click: " + orePC; //updates the HUD displays for score
                 chipPCText.text = "Chips Per Click: " + chipPC;
-                DisableLockPoints();
-                Debug.Log("Difficulty is: " + tag);
-                OpenMenu("lore");
+                DisableLockPoints(); //turns of lock points
+                Debug.Log("Difficulty is: " + tag); //debug statement
+                OpenMenu("lore"); //opens the first story menu of the game
                 break;
             case "medium":
                 isGameActive = true;
@@ -129,11 +130,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
-
-    public void UpdateScore(int scoreToAdd, string tag){
-        if(tag.Equals("ore")){
-            oreScore += scoreToAdd;
-            oreTotalText.text = "Ore Available: " + oreScore;
+    //Updates the score displayed on the HUD
+    public void UpdateScore(int scoreToAdd, string tag){ //takes in the new score and a tag for which score to update, chip or ore
+        if(tag.Equals("ore")){ 
+            oreScore += scoreToAdd; //adds the new value to the old
+            oreTotalText.text = "Ore Available: " + oreScore; //changes the display text
         }else if(tag.Equals("chip")){
             chipScore += scoreToAdd;
             chipTotalText.text = "Chips Available: " + chipScore;
@@ -145,11 +146,12 @@ public class GameManager : MonoBehaviour
         techScoreText.text = "Ore Available: " + oreScore + "\nChips Available: " + chipScore;
     }
 
-    public void AddMultiplier(string tag){
-        if(tag.Equals("+2Ore")){
-            orePC += 2;
-            OreButton.pointValue +=2;
-            orePCText.text = "Ore Per Click: " + orePC;
+    //The tech tree has unlockable multipliers, this method applys them
+    public void AddMultiplier(string tag){ //takes in a tag for which multiplier was unlocked
+        if(tag.Equals("+2Ore")){ //for each tag
+            orePC += 2; //increase the ore or chip per click
+            OreButton.pointValue +=2; //increase the buttons point value as well
+            orePCText.text = "Ore Per Click: " + orePC; //update the HUD text
         }else if(tag.Equals("+2Chips")){
             chipPC += 2;
             ChipButton.pointValue +=2;
@@ -173,9 +175,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    //This method opens a menu based on the tag it was passed
     public void OpenMenu(string tag){ //CAN STILL OPEN THE CLICKER INSIDE BUILDMODE
-        HUD.gameObject.SetActive(false);
-        if(tag.Equals("ore")){
+        HUD.gameObject.SetActive(false); //turns off the HUD
+        if(tag.Equals("ore")){ //checks each tag an if it matches sets the menu in question to active
             OreMenu.gameObject.SetActive(true);
         }else if(tag.Equals("build")){
             BuildMenu.gameObject.SetActive(true);
@@ -196,8 +199,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void ReturnToHUD(string tag){
-        if(tag.Equals("oreMenu")){
+    //This method reverses what the previous method did
+    public void ReturnToHUD(string tag){ //takes in a tag
+        if(tag.Equals("oreMenu")){ //checks each tag, if it matches it turns said menu off
             OreMenu.gameObject.SetActive(false);
         }else if(tag.Equals("chip")){
             ChipMenu.gameObject.SetActive(false);
@@ -212,21 +216,23 @@ public class GameManager : MonoBehaviour
         }else if(tag.Equals("satarray")){
             SatMenu.gameObject.SetActive(false);
         }
-        HUD.gameObject.SetActive(true);
+        HUD.gameObject.SetActive(true); //at the end it sets the HUD back to active
     }
 
+    //Method to end the game
     public void ReturnToMenu(string tag){
         if(tag.Equals("endgame")){
-            EndingStory.gameObject.SetActive(false);
+            EndingStory.gameObject.SetActive(false); //turns off the last story text box
             HUD.gameObject.SetActive(true);
             //MainMenu.gameObject.SetActive(true);
             //THIS NEEDS TO SET SCORES TO 0, DELETE ALL BUILT ROOMS
         }
     }
 
+    //Called by the blueprint room to place the real room
     public void BuildRoom(int room){
-        roomNum = room;
-        switch(roomNum){
+        roomNum = room; //takes in a room number
+        switch(roomNum){ //switches thru each and creates the specified room
             case 0:
                 Instantiate(rooms[0]);
                 break;
@@ -255,11 +261,12 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    //This method adds all newly created lockpoints to a list so they can be found later
     public int AddToList(GameObject Lockpoint){//THIS NEEDS SOME CLEANING UP
-        for(int i = 0; i < lockP.Count; i++){
+        for(int i = 0; i < lockP.Count; i++){ //loops through all lockpoints
             if(lockP[i] == null){
                 Debug.Log("NULL WAS FOUND");
-                lockP.Insert(i, Lockpoint);
+                lockP.Insert(i, Lockpoint); //inserts the new one
                 return 1;
             }
         }
@@ -267,29 +274,33 @@ public class GameManager : MonoBehaviour
         lockP.Insert(lockP.Count, Lockpoint);
         return 0;
     }
+
+    //Turns all lock points in the list off
     void DisableLockPoints(){
-        for(int i = 0; i < lockP.Count; i++){
+        for(int i = 0; i < lockP.Count; i++){ //loops through the list
             if(lockP[i] != null){
-                lockP[i].SetActive(false);
+                lockP[i].SetActive(false); //sets them as inactive
             }
         }
     }
 
+    //Turns all lock points in the list on
     void EnableLockPoints(){
-        for(int i = 0; i < lockP.Count; i++){
+        for(int i = 0; i < lockP.Count; i++){ //loops through the list
             if(lockP[i] != null){
-                lockP[i].SetActive(true);
+                lockP[i].SetActive(true); //sets them as active
             }
         }
     }
 
+    //This method takes in the upgrade that was purchased and removes the appropriate amount of currency and then calls another method to implement the upgrade
     public void ProcessUpgrade(string tag){
-        switch(tag){
+        switch(tag){ //switches through all possibly upgrades
             case "+2Ore":
-                if(oreScore >= 100){
-                    UpdateScore(-100, "ore");
-                    AddMultiplier(tag);
-                    Chip2.gameObject.SetActive(true);
+                if(oreScore >= 100){ //if they have enough currency
+                    UpdateScore(-100, "ore"); //remove the currency
+                    AddMultiplier(tag); //call the Addmultiplier method
+                    Chip2.gameObject.SetActive(true); //turns on the next ipgrade in the tech tree
                 }
                 break;
             case "+2Chips":
@@ -317,7 +328,7 @@ public class GameManager : MonoBehaviour
             case "SmallCorridor":
                 if(oreScore >= 25){
                     UpdateScore(-25, "ore");
-                    RoomSmallCorridor.gameObject.SetActive(true);
+                    RoomSmallCorridor.gameObject.SetActive(true); //puts the room into the build menu
                     TurningCorners.gameObject.SetActive(true);
                     ServerRoom.gameObject.SetActive(true);
                 }
@@ -370,6 +381,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    //The admin mode method simply gives the player a huge amount of ore and chips
     public void GiveAdmin(){
         UpdateScore(10000, "ore");
         UpdateScore(10000, "chip");

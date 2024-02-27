@@ -3,26 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//Script for opening the tech tree
 public class TechTreeOpen : MonoBehaviour
 {
+    //create variables
     private Button button;
     private GameManager gameManager;
     // Start is called before the first frame update
     void Start()
     {
-        button = GetComponent<Button>();
-        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
-        button.onClick.AddListener(OpenTechTree);
+        button = GetComponent<Button>(); //find button
+        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>(); //find gameManager
+        button.onClick.AddListener(OpenTechTree); //set listener
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    //Call the gameManager's OpenMenu method when the button is clicked
     void OpenTechTree(){
-        Debug.Log(gameObject.name + " was clicked");
         gameManager.OpenMenu("techTree");
     }
 }

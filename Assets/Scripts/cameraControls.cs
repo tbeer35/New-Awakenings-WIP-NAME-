@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Script to allow the player to move the camera
 public class cameraControls : MonoBehaviour
 {
     public Transform cameraTransform;
@@ -21,14 +22,14 @@ public class cameraControls : MonoBehaviour
     public Vector3 dragCurrentPosition;
 
     void Start() {
-
+        //set positions and rotations
         newPosition = transform.position;
         newRotation = transform.rotation;
         //newZoom = cameraTransform.localPosition;
     }
 
     void Update() {
-        HandleMovementInput();
+        HandleMovementInput(); //call the handle method
         //HandleMouseInput();
     }
 
@@ -60,14 +61,14 @@ public class cameraControls : MonoBehaviour
     }
     */
 
-
+    //Method to process player input and apply it to the camera
     void HandleMovementInput() {
-        if(Input.GetKey(KeyCode.LeftShift)){
+        if(Input.GetKey(KeyCode.LeftShift)){ //if they press leftshift increase the speed
             movementSpeed = fastSpeed;
         } else {
             movementSpeed = normalSpeed;
         }
-        //take in input from keyboard and 
+        //take in input from keyboard and apply speed in a direction based on the key pressed
         if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)){
             newPosition += (transform.forward * movementSpeed); //up
         }
@@ -82,20 +83,14 @@ public class cameraControls : MonoBehaviour
         }
 
         //take in input from keyboard for rotation
-        if(Input.GetKey(KeyCode.Q)){
+        if(Input.GetKey(KeyCode.Q)){ //Q rotates left
             newRotation *= Quaternion.Euler(Vector3.up * rotationAmount);
         }
-        if(Input.GetKey(KeyCode.E)){
+        if(Input.GetKey(KeyCode.E)){ //E rotates right
             newRotation *= Quaternion.Euler(Vector3.up * -rotationAmount);
         }
         
-
-        //if(Input.GetKey(KeyCode.R)){
-       //     newZoom += zoomAmount;
-       // }
-       // if(Input.GetKey(KeyCode.F)){
-      //      newZoom -= zoomAmount;
-      //  }
+        
         
         transform.position = Vector3.Lerp(transform.position, newPosition, Time.deltaTime *movementTime);
         transform.rotation = Quaternion.Lerp(transform.rotation, newRotation, Time.deltaTime *movementTime);

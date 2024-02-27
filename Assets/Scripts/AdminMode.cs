@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+//Simple script that adds a listener onto the admin mode button which calls a basic function to call a function of the game manager to enable admin mode
 public class AdminMode : MonoBehaviour
 {
     private Button button;
     private GameManager gameManager;
-    // Start is called before the first frame update
+    // initialize the button, find the game manager, add the listener
     void Start()
     {
         button = GetComponent<Button>();
@@ -20,7 +20,7 @@ public class AdminMode : MonoBehaviour
     {
         
     }
-
+    //calls the gameManager's Give admin function
     void GetMoney(){
         gameManager.GiveAdmin();
     }

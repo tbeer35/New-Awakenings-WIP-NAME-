@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Script to control camera zoom
 public class cameraZoom : MonoBehaviour
 {
+    //set variables
     public float ScrollSpeed = 10;
     public Camera zoomCamera;
 
@@ -22,7 +24,7 @@ public class cameraZoom : MonoBehaviour
 
     void HandleZoomInput(){
         if(zoomCamera.orthographic){
-            zoomCamera.orthographicSize -= Input.GetAxis("Mouse ScrollWheel") * ScrollSpeed;
+            zoomCamera.orthographicSize -= Input.GetAxis("Mouse ScrollWheel") * ScrollSpeed; //when you scroll in the camera zooms in and vice versa
         }
     }
 }
