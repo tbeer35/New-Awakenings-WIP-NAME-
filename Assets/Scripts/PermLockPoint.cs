@@ -23,6 +23,10 @@ public class PermLockPoint : MonoBehaviour
         if(other != ParentWall){ //if it isn't the wall attached to the lockpoint
             if(transform.forward == other.transform.forward){ //if they're both facing the same way
                 ParentWall.gameObject.SetActive(false); //turn off the wall attached to this lockpoint
+                //TODO: find others parent and also delete it assuming its a wall, then insantiate the small gate A prefab
+                Debug.Log("other's parent is");
+                Debug.Log(other.transform.parent.gameObject);
+                Debug.Log("that was other's parent");
                 parentOff = true;
             }else if(other.tag.Equals("permLockPoint")){ //if its  colliding with another permanent lock point implying a room has just been placed
                 //ParentWall.gameObject.SetActive(false);
