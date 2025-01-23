@@ -386,4 +386,8 @@ public class GameManager : MonoBehaviour
         UpdateScore(10000, "ore");
         UpdateScore(10000, "chip");
     }
+
+    public void ResetCamera(){
+        Debug.Log("Reset Camera activated");
+    }
 }
