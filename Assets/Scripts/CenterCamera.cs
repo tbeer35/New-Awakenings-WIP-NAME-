@@ -20,6 +20,5 @@ public class CenterCamera : MonoBehaviour
     void Center()
     {
         gameManager.ResetCamera();
-        //gameManager.ResetCamera();
     }
 }

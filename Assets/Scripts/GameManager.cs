@@ -54,6 +54,7 @@ public class GameManager : MonoBehaviour
     public GameObject RoomCargoBay;
     public GameObject RoomCommunicationsArray;
     public int roomNum;
+    public Transform cameraTransform;
     // Start sets currency, score, ore and chips per click back to their base levels and turns off the permanenet lock points
     void Start()
     {
@@ -387,7 +388,8 @@ public class GameManager : MonoBehaviour
         UpdateScore(10000, "chip");
     }
 
+    //Reset camera takes the camera transform passed to the gameManager and sets its position to 0,0,0
     public void ResetCamera(){
-        Debug.Log("Reset Camera activated");
+        cameraTransform.position = new Vector3(0.0f,0.0f,0.0f);
     }
 }
