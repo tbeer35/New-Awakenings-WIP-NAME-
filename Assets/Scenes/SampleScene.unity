@@ -7607,6 +7607,7 @@ MonoBehaviour:
   RoomCargoBay: {fileID: 1916816548}
   RoomCommunicationsArray: {fileID: 1424298206}
   roomNum: 0
+  cameraTransform: {fileID: 963194228}
 --- !u!4 &639971997
 Transform:
   m_ObjectHideFlags: 0
@@ -11171,7 +11172,7 @@ MonoBehaviour:
   fastSpeed: 0.75
   movementSpeed: 1
   movementTime: 3
-  rotationAmount: 2
+  rotationAmount: 0.5
   newPosition: {x: 0, y: 0, z: 0}
   newRotation: {x: 0, y: 0, z: 0, w: 0}
   dragStartPosition: {x: 0, y: 0, z: 0}
