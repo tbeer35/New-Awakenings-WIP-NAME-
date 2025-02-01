@@ -34,7 +34,7 @@ public class BlueprintRooms : MonoBehaviour
         if(Input.GetMouseButtonDown(0)){ //if the player left clicked to place the room
             if(unlocked == false){ //and they're on a lockpoint (valid building spot)
                 //ANOTHER IF TO MAKE SURE THEY HAVE ENOUGH CURRENCY WITH AN ELSE THAT PRINTS AN ERROR TO THE SCREEN
-                CheckCurrency(); //call the CheckCurrency funtion
+                CheckCurrency(); //call the CheckCurrency funtion to place the room
             }
         }else if(Input.GetMouseButtonDown(1)){ //if the player right clicked to delete the blueprint
             if(unlocked == true){ //and it's not on a lockpoint
@@ -49,9 +49,8 @@ public class BlueprintRooms : MonoBehaviour
         LayerMask mask = LayerMask.GetMask("BuildMode");
         Ray castPoint = Camera.main.ScreenPointToRay(mouse);
         RaycastHit hit;
-        if (Physics.Raycast(castPoint, out hit, Mathf.Infinity, mask))
-        {
-        transform.position = hit.point; //move the blueprint to where the raycast points
+        if (Physics.Raycast(castPoint, out hit, Mathf.Infinity, mask)){
+            transform.position = hit.point; //move the blueprint to where the raycast points
         }
 
         if (Input.GetKeyDown(KeyCode.R)) { //If they hit R
