@@ -2814,6 +2814,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ParentWall: {fileID: 8563965230891634940}
+  door: {fileID: 4561728149918135731, guid: c473bb9b7c79d5745852f89ee58fcaf8, type: 3}
 --- !u!54 &3540000209161492191
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5194,6 +5195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ParentWall: {fileID: 5175787639878745075}
+  door: {fileID: 4561728149918135731, guid: c473bb9b7c79d5745852f89ee58fcaf8, type: 3}
 --- !u!1 &8563756153051806936
 GameObject:
   m_ObjectHideFlags: 0

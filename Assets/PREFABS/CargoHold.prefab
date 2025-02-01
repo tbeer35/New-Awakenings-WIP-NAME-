@@ -1961,6 +1961,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ParentWall: {fileID: 2343044252247999109}
+  door: {fileID: 4561728149918135731, guid: c473bb9b7c79d5745852f89ee58fcaf8, type: 3}
 --- !u!1 &995032683024947195
 GameObject:
   m_ObjectHideFlags: 0
@@ -2089,6 +2090,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ParentWall: {fileID: 9084078360692986609}
+  door: {fileID: 4561728149918135731, guid: c473bb9b7c79d5745852f89ee58fcaf8, type: 3}
 --- !u!1 &1023237117685359660
 GameObject:
   m_ObjectHideFlags: 0
@@ -4317,6 +4319,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ParentWall: {fileID: 2342645166010427137}
+  door: {fileID: 4561728149918135731, guid: c473bb9b7c79d5745852f89ee58fcaf8, type: 3}
 --- !u!1 &2256581331379850254
 GameObject:
   m_ObjectHideFlags: 0
@@ -12765,6 +12768,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ParentWall: {fileID: 405962972109099930}
+  door: {fileID: 4561728149918135731, guid: c473bb9b7c79d5745852f89ee58fcaf8, type: 3}
 --- !u!1 &4371966820706539024
 GameObject:
   m_ObjectHideFlags: 0
@@ -13596,6 +13600,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ParentWall: {fileID: 2342602507281436057}
+  door: {fileID: 4561728149918135731, guid: c473bb9b7c79d5745852f89ee58fcaf8, type: 3}
 --- !u!1 &4802966626763054470
 GameObject:
   m_ObjectHideFlags: 0
@@ -15529,6 +15534,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ParentWall: {fileID: 1991366023942705418}
+  door: {fileID: 4561728149918135731, guid: c473bb9b7c79d5745852f89ee58fcaf8, type: 3}
 --- !u!1 &5749979415458134110
 GameObject:
   m_ObjectHideFlags: 0
@@ -17995,6 +18001,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ParentWall: {fileID: 2342547244612028957}
+  door: {fileID: 4561728149918135731, guid: c473bb9b7c79d5745852f89ee58fcaf8, type: 3}
 --- !u!1 &6720338139455681501
 GameObject:
   m_ObjectHideFlags: 0
@@ -18123,6 +18130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ParentWall: {fileID: 8144417574878344425}
+  door: {fileID: 4561728149918135731, guid: c473bb9b7c79d5745852f89ee58fcaf8, type: 3}
 --- !u!1 &6748516522620211299
 GameObject:
   m_ObjectHideFlags: 0

@@ -128,6 +128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ParentWall: {fileID: 5996220708536501309}
+  door: {fileID: 4561728149918135731, guid: c473bb9b7c79d5745852f89ee58fcaf8, type: 3}
 --- !u!1 &526322372332771649
 GameObject:
   m_ObjectHideFlags: 0
@@ -458,6 +459,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ParentWall: {fileID: 6432412283552852158}
+  door: {fileID: 4561728149918135731, guid: c473bb9b7c79d5745852f89ee58fcaf8, type: 3}
 --- !u!1 &3213130668378484906
 GameObject:
   m_ObjectHideFlags: 0
@@ -617,6 +619,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ParentWall: {fileID: 626353442704393473}
+  door: {fileID: 4561728149918135731, guid: c473bb9b7c79d5745852f89ee58fcaf8, type: 3}
 --- !u!1 &5996220708536501309
 GameObject:
   m_ObjectHideFlags: 0
@@ -11616,6 +11619,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ParentWall: {fileID: 526322372332771649}
+  door: {fileID: 4561728149918135731, guid: c473bb9b7c79d5745852f89ee58fcaf8, type: 3}
 --- !u!1 &9115222383072578460
 GameObject:
   m_ObjectHideFlags: 0

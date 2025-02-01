@@ -34,7 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4559140018218165857}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
 --- !u!33 &6764737789065826030
 MeshFilter:
@@ -128,6 +128,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ParentWall: {fileID: 4596594128797122376}
+  door: {fileID: 4561728149918135731, guid: c473bb9b7c79d5745852f89ee58fcaf8, type: 3}
+  newWall: {fileID: 0}
 --- !u!1 &2132044963644685725
 GameObject:
   m_ObjectHideFlags: 0
@@ -162,7 +164,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4559140018218165857}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!33 &1437321895776091152
 MeshFilter:
@@ -256,6 +258,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ParentWall: {fileID: 5993527806978099788}
+  door: {fileID: 4561728149918135731, guid: c473bb9b7c79d5745852f89ee58fcaf8, type: 3}
+  newWall: {fileID: 0}
 --- !u!1 &3626540123200691695
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,13 +288,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3626540123200691695}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -10, y: 1.31, z: -2.5}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -10, y: 1.31, z: -2.500002}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4559140018218165857}
-  m_RootOrder: 0
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!33 &2329908325674776007
 MeshFilter:
@@ -384,6 +388,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ParentWall: {fileID: 6659989847475634084}
+  door: {fileID: 4561728149918135731, guid: c473bb9b7c79d5745852f89ee58fcaf8, type: 3}
+  newWall: {fileID: 0}
 --- !u!1 &4596594128797122376
 GameObject:
   m_ObjectHideFlags: 0
@@ -12139,7 +12145,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4559140018218165857}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
 --- !u!33 &8243957795880670883
 MeshFilter:
@@ -12233,6 +12239,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ParentWall: {fileID: 7064506019036780787}
+  door: {fileID: 4561728149918135731, guid: c473bb9b7c79d5745852f89ee58fcaf8, type: 3}
+  newWall: {fileID: 0}
 --- !u!1 &6659989847475634084
 GameObject:
   m_ObjectHideFlags: 0
@@ -12247,7 +12255,7 @@ GameObject:
   - component: {fileID: 8648364960740533277}
   m_Layer: 0
   m_Name: WallSmall1
-  m_TagString: Untagged
+  m_TagString: realWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -12467,7 +12475,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4559140018218165857}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!33 &5034054120657250529
 MeshFilter:
@@ -12561,6 +12569,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ParentWall: {fileID: 3781840287755256296}
+  door: {fileID: 4561728149918135731, guid: c473bb9b7c79d5745852f89ee58fcaf8, type: 3}
+  newWall: {fileID: 0}
 --- !u!1 &8171230980198609227
 GameObject:
   m_ObjectHideFlags: 0
@@ -12589,12 +12599,12 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 777160574129369658}
   - {fileID: 6173062747067726942}
   - {fileID: 4991618052781527100}
   - {fileID: 3939820048303127102}
   - {fileID: 7719701986570063503}
   - {fileID: 898172587918335327}
+  - {fileID: 777160574129369658}
   m_Father: {fileID: 5991416159222113856}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -12632,7 +12642,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4559140018218165857}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!33 &8507551656773748412
 MeshFilter:
@@ -12726,6 +12736,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ParentWall: {fileID: 5994010126297871372}
+  door: {fileID: 4561728149918135731, guid: c473bb9b7c79d5745852f89ee58fcaf8, type: 3}
+  newWall: {fileID: 0}
 --- !u!1001 &3782960396803371556
 PrefabInstance:
   m_ObjectHideFlags: 0

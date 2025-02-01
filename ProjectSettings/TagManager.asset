@@ -29,6 +29,7 @@ TagManager:
   - satarray
   - endgame
   - endlore
+  - realWall
   layers:
   - Default
   - TransparentFX
