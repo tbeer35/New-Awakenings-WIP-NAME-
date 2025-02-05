@@ -23,25 +23,16 @@ public class PermLockPoint : MonoBehaviour
     private void OnTriggerEnter(Collider other) 
     {
         if(other != ParentWall){ //if it isn't the wall attached to the lockpoint
-            Debug.Log("this is the tag of other:" + other.tag);
-            if(other.transform.parent.tag.Equals("realWall")){
-                    Instantiate(door, other.transform.position, other.transform.rotation);
-                    Destroy(other.gameObject);
-                    Destroy(ParentWall);
-            }
             if(transform.forward == other.transform.forward && !other.CompareTag("permLockPoint")){ //if they're both facing the same way
                 ParentWall.gameObject.SetActive(false); //turn off the wall attached to this lockpoint
                 //TODO: find others parent and also delete it assuming its a wall, then insantiate the small gate A prefab where the new wall was
-                Debug.Log("other's parent is");
-                Debug.Log(other.transform.parent.gameObject);
-                Debug.Log("that was other's parent");
                 parentOff = true;
             }else if(other.tag.Equals("permLockPoint")){ //if its  colliding with another permanent lock point implying a room has just been placed
-                //ParentWall.gameObject.SetActive(false);
                 newWall = other.transform.parent.gameObject;
-                Debug.Log("HEY this is others parent wall" + newWall);
-                Destroy(gameObject); //destroy itself
+                Instantiate(door, ParentWall.transform.position, ParentWall.transform.rotation);//THIS WORKS BUT THERES 2 EACH PERMLOCKPOINT CALLS 
+                Destroy(ParentWall);
                 Destroy(other.gameObject); //destroy what collided with it
+                Destroy(gameObject); //destroy itself
             }
         }
     }
