@@ -3663,6 +3663,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ParentWall: {fileID: 287642841622572916}
   door: {fileID: 4561728149918135731, guid: c473bb9b7c79d5745852f89ee58fcaf8, type: 3}
+  newWall: {fileID: 0}
 --- !u!54 &6332922509722588084
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3792,6 +3793,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ParentWall: {fileID: 8563965230891634940}
   door: {fileID: 4561728149918135731, guid: c473bb9b7c79d5745852f89ee58fcaf8, type: 3}
+  newWall: {fileID: 0}
 --- !u!54 &3540000209161492191
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5822,7 +5824,7 @@ GameObject:
   - component: {fileID: 7141643310893385907}
   m_Layer: 0
   m_Name: TJunction
-  m_TagString: Untagged
+  m_TagString: tJunction
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6862,6 +6864,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ParentWall: {fileID: 5175787639878745075}
   door: {fileID: 4561728149918135731, guid: c473bb9b7c79d5745852f89ee58fcaf8, type: 3}
+  newWall: {fileID: 0}
 --- !u!1 &8062024855182519402
 GameObject:
   m_ObjectHideFlags: 0

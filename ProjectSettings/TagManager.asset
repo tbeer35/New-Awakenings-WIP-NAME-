@@ -30,6 +30,7 @@ TagManager:
   - endgame
   - endlore
   - realWall
+  - tJunction
   layers:
   - Default
   - TransparentFX
