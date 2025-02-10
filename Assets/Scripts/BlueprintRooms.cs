@@ -38,6 +38,7 @@ public class BlueprintRooms : MonoBehaviour
             }
         }else if(Input.GetMouseButtonDown(1)){ //if the player right clicked to delete the blueprint
             if(unlocked == true){ //and it's not on a lockpoint
+                gameManager.isBlueprintActive = false; //tells the gameManager there are no more blueprint rooms active
                 Destroy(gameObject); //destroy the blueprint
             }
         }
@@ -124,6 +125,7 @@ public class BlueprintRooms : MonoBehaviour
         switch(gameObject.tag){ //switch on the tag of the game object, for each possible tag check if they have enough currency, remove the currency, create the physical building, delete the blueprint
             case "SmallCorridor":
                 if(gameManager.oreScore >= 50){
+                    gameManager.isBlueprintActive = false; //tells the gameManager there are no more blueprint rooms active
                     gameManager.UpdateScore(-50,"ore");
                     Instantiate(realRoom, transform.position, transform.rotation);
                     Destroy(gameObject);
@@ -131,6 +133,7 @@ public class BlueprintRooms : MonoBehaviour
                 break;
             case "CorridorTurn":
                 if(gameManager.oreScore >= 125){
+                    gameManager.isBlueprintActive = false;
                     gameManager.UpdateScore(-125,"ore");
                     Instantiate(realRoom, transform.position, transform.rotation);
                     Destroy(gameObject);
@@ -138,6 +141,7 @@ public class BlueprintRooms : MonoBehaviour
                 break;
             case "ServerRoom":
                 if(gameManager.oreScore >= 200){
+                    gameManager.isBlueprintActive = false;
                     gameManager.UpdateScore(-200,"ore");
                     Instantiate(realRoom, transform.position, transform.rotation);
                     Destroy(gameObject);
@@ -145,6 +149,7 @@ public class BlueprintRooms : MonoBehaviour
                 break;
             case "ScienceLab":
                 if(gameManager.chipScore >= 150 && gameManager.oreScore >= 250){
+                    gameManager.isBlueprintActive = false;
                     gameManager.UpdateScore(-150,"chip");
                     gameManager.UpdateScore(-250,"ore");
                     Instantiate(realRoom, transform.position, transform.rotation);
@@ -153,6 +158,7 @@ public class BlueprintRooms : MonoBehaviour
                 break;
             case "TCorridor":
                 if(gameManager.chipScore >= 50 && gameManager.oreScore >= 225){
+                    gameManager.isBlueprintActive = false;
                     gameManager.UpdateScore(-50,"chip");
                     gameManager.UpdateScore(-225,"ore");
                     Instantiate(realRoom, transform.position, transform.rotation);
@@ -161,6 +167,7 @@ public class BlueprintRooms : MonoBehaviour
                 break;
             case "CargoHold":
                 if(gameManager.chipScore >= 100 && gameManager.oreScore >= 100){
+                    gameManager.isBlueprintActive = false;
                     gameManager.UpdateScore(-100,"chip");
                     gameManager.UpdateScore(-250,"ore");
                     Instantiate(realRoom, transform.position, transform.rotation);
@@ -169,6 +176,7 @@ public class BlueprintRooms : MonoBehaviour
                 break;
             case "CommunicationRoom":
                 if(gameManager.chipScore >= 1000 && gameManager.oreScore >= 1000){
+                    gameManager.isBlueprintActive = false;
                     gameManager.UpdateScore(-1000,"chip");
                     gameManager.UpdateScore(-1000,"ore");
                     Instantiate(realRoom, transform.position, transform.rotation);
@@ -176,8 +184,6 @@ public class BlueprintRooms : MonoBehaviour
                 }
                 break;
         }
-        //Instantiate(realRoom, transform.position, transform.rotation);
-        //Destroy(gameObject);
     }
     
 }

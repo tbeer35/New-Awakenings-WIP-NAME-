@@ -16,7 +16,7 @@ public class BuildingButtons : MonoBehaviour
     {
         button = GetComponent<Button>(); //find the button
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>(); //find the game manager
-        button.onClick.AddListener(MakeRoom); //create the listener
+        button.onClick.AddListener(() => MakeRoom(gameManager.isBlueprintActive)); //create the listener, this time it takes in a boolean
     }
 
     // Update is called once per frame
@@ -26,8 +26,10 @@ public class BuildingButtons : MonoBehaviour
     }
 
     //on click call the gameManager's build room function passing which room number the button corresponds too
-    void MakeRoom(){ 
-        Debug.Log(gameObject.name + " was clicked");
-        gameManager.BuildRoom(roomNum);
+    void MakeRoom(bool isBlueprintActive){ 
+        if(isBlueprintActive == false){ //if there are no blueprint rooms it lets you spawn one
+            Debug.Log(gameObject.name + " was clicked");
+            gameManager.BuildRoom(roomNum);
+        }
     }
 }

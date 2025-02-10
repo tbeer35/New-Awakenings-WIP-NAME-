@@ -19,10 +19,15 @@ public class closeMenu : MonoBehaviour
 
     //Call when the close button is clicked
     void close(){
-        Debug.Log(gameObject.name + " was clicked"); //debug statement
-        Debug.Log("this is my tag: " + tag); //debug statement
         if(tag.Equals("endgame")){ //check the tag to see if its the last menu of the game
             gameManager.ReturnToMenu(tag); //if so call the return to start method in gameManager
+        }
+        if(tag.Equals("buildMenu")){ //check to see if its the building menu
+            if(gameManager.isBlueprintActive == false){ //there have to be no blueprint rooms active to close the building menu
+                gameManager.ReturnToHUD(tag);
+            }else{
+                return;
+            }
         }
         gameManager.ReturnToHUD(tag); //otherwise call the return to base hud method in gameManager
     }

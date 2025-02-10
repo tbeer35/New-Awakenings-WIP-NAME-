@@ -54,8 +54,10 @@ public class GameManager : MonoBehaviour
     public GameObject RoomCargoBay;
     public GameObject RoomCommunicationsArray;
     public int roomNum;
+    public bool isBlueprintActive;
     public Transform cameraTransform;
     // Start sets currency, score, ore and chips per click back to their base levels and turns off the permanenet lock points
+    // Also sets isGameActive to true and isBlueprintActive to false
     void Start()
     {
         isGameActive = true;
@@ -67,6 +69,7 @@ public class GameManager : MonoBehaviour
         UpdateScore(0, "chip");
         orePCText.text = "Ore Per Click: " + orePC;
         chipPCText.text = "Chips Per Click: " + chipPC;
+        isBlueprintActive = false;
         DisableLockPoints();
     }
 
@@ -232,6 +235,7 @@ public class GameManager : MonoBehaviour
 
     //Called by the blueprint room to place the real room
     public void BuildRoom(int room){
+        isBlueprintActive = true; //marks that a blueprint room is active
         roomNum = room; //takes in a room number
         switch(roomNum){ //switches thru each and creates the specified room
             case 0:

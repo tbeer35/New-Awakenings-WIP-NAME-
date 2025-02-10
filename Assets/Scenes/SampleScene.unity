@@ -7664,6 +7664,7 @@ MonoBehaviour:
   RoomCargoBay: {fileID: 1916816548}
   RoomCommunicationsArray: {fileID: 1424298206}
   roomNum: 0
+  isBlueprintActive: 0
   cameraTransform: {fileID: 963194228}
 --- !u!4 &639971997
 Transform:
@@ -11210,7 +11211,7 @@ Transform:
   m_Children:
   - {fileID: 963194228}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1111907514
 MonoBehaviour:
