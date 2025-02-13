@@ -68,6 +68,7 @@ public class cameraControls : MonoBehaviour
         } else {
             movementSpeed = normalSpeed;
         }
+        movementSpeed *= Time.deltaTime;
         //take in input from keyboard and apply speed in a direction based on the key pressed
         if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)){
             newPosition += (transform.forward * movementSpeed); //up

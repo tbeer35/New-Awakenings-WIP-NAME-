@@ -11226,8 +11226,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraTransform: {fileID: 963194228}
-  normalSpeed: 0.25
-  fastSpeed: 0.75
+  normalSpeed: 60
+  fastSpeed: 120
   movementSpeed: 1
   movementTime: 3
   rotationAmount: 0.5
