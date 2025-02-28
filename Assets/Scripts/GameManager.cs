@@ -55,6 +55,10 @@ public class GameManager : MonoBehaviour
     public GameObject RoomCommunicationsArray;
     public int roomNum;
     public bool isBlueprintActive;
+    public GameObject Canvas;
+    public GameObject Player;
+    public GameObject Camera;
+
     public Transform cameraTransform;
     // Start sets currency, score, ore and chips per click back to their base levels and turns off the permanenet lock points
     // Also sets isGameActive to true and isBlueprintActive to false
@@ -76,7 +80,22 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        ProcessInput();
+    }
+
+    public void ProcessInput(){
+        if(Input.GetKeyDown(KeyCode.C)){ //if the player hits c to swap cameras
+            if(Player.gameObject.activeInHierarchy){ //if the player is active
+                Player.gameObject.SetActive(false); //turn off player
+                Camera.gameObject.SetActive(true); //turn on camerapivot
+                Cursor.visible = true; //make the cursor show up
+                Cursor.lockState = CursorLockMode.None; //free the cursor
+            }else{
+                Cursor.visible = false; //hide the camera
+                Camera.gameObject.SetActive(false); //turn the camera pivot off
+                Player.gameObject.SetActive(true); // turn the player off
+            }
+        }
     }
 
     //This method is called at the start of the game and sets the difficulty

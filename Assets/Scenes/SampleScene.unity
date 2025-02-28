@@ -8205,6 +8205,9 @@ MonoBehaviour:
   RoomCommunicationsArray: {fileID: 1424298206}
   roomNum: 0
   isBlueprintActive: 0
+  Canvas: {fileID: 1487042820}
+  Player: {fileID: 897352240}
+  Camera: {fileID: 1111907511}
   cameraTransform: {fileID: 963194228}
 --- !u!4 &639971997
 Transform:
